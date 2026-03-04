@@ -10,12 +10,12 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("📸 OCR ludique avec effet machine à écrire")
-st.write("Upload une image et regarde le texte apparaître progressivement.")
+st.title("Text extraction app")
+st.write("Upload an image and see the text extraction")
 
 # Upload de l'image
 uploaded_file = st.file_uploader(
-    "Choisis une image",
+    "Choose an image (png, jpg, jpeg)",
     type=["png", "jpg", "jpeg"]
 )
 
@@ -50,7 +50,7 @@ if uploaded_file:
     st.subheader("🖼️ Image source")
     st.image(image, use_column_width=True)
 
-    if st.button("🔍 Lancer l’OCR"):
+    if st.button("🔍 Run OCR"):
         with st.spinner("Analyse de l’image..."):
             processed = preprocess_image(image)
             text = pytesseract.image_to_string(
