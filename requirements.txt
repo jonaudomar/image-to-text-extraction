@@ -1,5 +1,5 @@
 streamlit
 PIL
-pytesseract
+pytesseract==0.3.13
 time
 random
